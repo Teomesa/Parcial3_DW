@@ -22,7 +22,7 @@ curl -X POST http://localhost:3000/patient/login \
 -d '{
     "email": "ana.gomez@email.com",
     "password": "admin123"
-}'
+}' | jq
 ```
 ### Guardar token para usar en siguientes peticiones
 ```bash
