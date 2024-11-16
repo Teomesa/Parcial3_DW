@@ -60,20 +60,20 @@ curl -X POST http://localhost:3000/patient/appointment \
 
 #### Modificar cita existente
 ```bash
-curl -X PUT http://localhost:3000/patient/appointment/1 \
+curl -X PUT http://localhost:3000/patient/appointment/{id} \
 -H "Authorization: Bearer $TOKEN" \
 -H "Content-Type: application/json" \
 -d '{
-    "doctorId": 2,
+    "doctorId": 1,
     "date": "2024-11-21",
-    "hour": "10:00"
+    "hour": "09:00"
 }' | jq
 ```
 
 #### Eliminar cita
 ```bash
 curl -X DELETE http://localhost:3000/patient/appointment/1 \
--H "Authorization: Bearer {token}"
+-H "Authorization: Bearer $TOKEN"
 ```
 
 ### Información de Doctores
