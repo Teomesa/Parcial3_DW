@@ -71,7 +71,7 @@ curl -X PUT http://localhost:3000/patient/appointment/{id} \
 
 #### Eliminar cita
 ```bash
-curl -X DELETE http://localhost:3000/patient/appointment/1 \
+curl -X DELETE http://localhost:3000/patient/appointment/{id} \
 -H "Authorization: Bearer $TOKEN" | jq
 ```
 
@@ -79,19 +79,19 @@ curl -X DELETE http://localhost:3000/patient/appointment/1 \
 
 #### Obtener información de un doctor en especifico segun ID
 ```bash
-curl http://localhost:3000/doctor/1 \
+curl http://localhost:3000/doctor/{id} \
 -H "Authorization: Bearer $TOKEN" | jq
 ```
 
 #### Obtener citas de un doctor
 ```bash
-curl http://localhost:3000/doctor/1/appointment \
+curl http://localhost:3000/doctor/{id}/appointment \
 -H "Authorization: Bearer $TOKEN" | jq
 ```
 
 #### Ver citas de un doctor por fecha
 ```bash
-curl "http://localhost:3000/doctor/1/appointment?date=20-11-2024" \
+curl "http://localhost:3000/doctor/{id}/appointment?date=20-11-2024" \
 -H "Authorization: Bearer $TOKEN" | jq
 ```
 
