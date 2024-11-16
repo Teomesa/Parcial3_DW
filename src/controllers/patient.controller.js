@@ -115,12 +115,7 @@ export class PatientController {
         res.json({
             status: 'success',
             message: '✅ Cita actualizada exitosamente',
-            data: {
-                id: updatedAppointment.id,
-                fecha: new Date(updatedAppointment.date).toLocaleDateString('es-CO'),
-                hora: updatedAppointment.hour.slice(0, 5),
-                doctor_id: updatedAppointment.doctor_id
-            }
+            data: updatedAppointment
         });
     } catch (error) {
         if (error.message === 'Cita no encontrada') {
@@ -136,7 +131,7 @@ export class PatientController {
         } else {
             res.status(500).json({
                 status: 'error',
-                message: error.message
+                message: '❌ Error al actualizar la cita: ' + error.message
             });
         }
     }
