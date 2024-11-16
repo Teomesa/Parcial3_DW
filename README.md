@@ -13,8 +13,7 @@ API REST para la gestión de citas médicas que permite a los pacientes agendar,
 - Docker y Docker Compose
 
 ## 📌 Endpoints
-
-### Para loguearse con un usuario del sistema:
+Comandos para consumir la API de una manera visualmente agradable
 #### Login de Paciente
 ```bash
 curl -X POST http://localhost:3000/patient/login \
@@ -73,7 +72,7 @@ curl -X PUT http://localhost:3000/patient/appointment/{id} \
 #### Eliminar cita
 ```bash
 curl -X DELETE http://localhost:3000/patient/appointment/1 \
--H "Authorization: Bearer $TOKEN"
+-H "Authorization: Bearer $TOKEN" | jq
 ```
 
 ### Información de Doctores
