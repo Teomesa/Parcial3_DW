@@ -2,6 +2,8 @@
     "name": "medical-system",
     "version": "1.0.0",
     "type": "module",
+    "description": "Sistema de citas médicas",
+    "main": "src/index.js",
     "scripts": {
       "start": "node src/index.js",
       "dev": "nodemon src/index.js"
