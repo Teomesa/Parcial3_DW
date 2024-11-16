@@ -15,8 +15,13 @@ router.get('/:doctorId',
 
 router.get('/:doctorId/appointment',
   AuthMiddleware.authenticate,
-  param('doctorId').isInt().withMessage('ID de doctor inválido'),
-  query('date').optional().isDate().withMessage('Formato de fecha inválido'),
+  [
+      param('doctorId').isInt().withMessage('ID de doctor inválido'),
+      query('date')
+          .optional()
+          .matches(/^\d{2}-\d{2}-\d{4}$/)
+          .withMessage('El formato de fecha debe ser DD-MM-YYYY')
+  ],
   ValidationMiddleware.validate,
   doctorController.getDoctorAppointments
 );
