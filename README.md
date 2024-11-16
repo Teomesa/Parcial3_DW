@@ -17,7 +17,6 @@ API REST para la gestión de citas médicas que permite a los pacientes agendar,
 ### Para loguearse con un usuario del sistema:
 #### Login de Paciente
 ```bash
-# POST /patient/login
 curl -X POST http://localhost:3000/patient/login \
 -H "Content-Type: application/json" \
 -d '{
