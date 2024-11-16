@@ -25,7 +25,10 @@ router.post('/login', loginValidations, ValidationMiddleware.validate, patientCo
 
 router.get('/appointment',
   AuthMiddleware.authenticate,
-  query('date').optional().isDate().withMessage('Formato de fecha inválido'),
+  query('date')
+      .optional()
+      .matches(/^\d{2}-\d{2}-\d{4}$/)
+      .withMessage('El formato de fecha debe ser DD-MM-YYYY'),
   ValidationMiddleware.validate,
   patientController.getAppointments
 );
